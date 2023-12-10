@@ -55,7 +55,7 @@ addEventListener("scroll", function () {
 
     // }
 
-    console.log(sumbuY);
+    // console.log(sumbuY);
 });
 
 function sendWhatsapp() {
