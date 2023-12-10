@@ -29,7 +29,7 @@ humbuger.addEventListener("click", function () {
 addEventListener("scroll", function () {
 
     const sumbuY = window.scrollY;
-    console.log(sumbuY);
+    // console.log(sumbuY);
     if (sumbuY > 0) {
         nav.classList.add("fixed-nav");
 
