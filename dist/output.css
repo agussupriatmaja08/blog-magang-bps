@@ -804,6 +804,10 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   width: 100%;
 }
 
+.w-\[200px\] {
+  width: 200px;
+}
+
 .max-w-\[250px\] {
   max-width: 250px;
 }
@@ -953,6 +957,16 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-cover {
