@@ -13,6 +13,7 @@ AOS.init();
 // });
 
 
+// klik ketika di luar humburger
 window.addEventListener('click', function (e) {
     if (e.target != humbuger && e.target != navMenu) {
         navMenu.classList.add("hidden");
@@ -29,9 +30,12 @@ humbuger.addEventListener("click", function () {
 addEventListener("scroll", function () {
 
     const sumbuY = window.scrollY;
+
+    console.log(sumbuY)
     // console.log(sumbuY);
     if (sumbuY > 0) {
         nav.classList.add("fixed-nav");
+        nav.classList.add("transparent");
 
 
     }
@@ -40,6 +44,27 @@ addEventListener("scroll", function () {
 
 
 
+    }
+
+    if(sumbuY >= 365){
+        nav.classList.remove('bg-transparent')
+        nav.classList.add('bg-white')
+        nav.classList.add('dark:bg-neutral-950');
+        // navBar.classList.add('text-neutral-950');
+        navBar.classList.remove('text-white');
+        navBar.classList.remove('lg:text-white');
+
+
+       
+    }
+
+    if(sumbuY <= 365){
+        nav.classList.add('bg-transparent')
+        nav.classList.remove('bg-white')
+        nav.classList.remove('dark:bg-neutral-950');
+        navBar.classList.add('lg:text-white');
+
+        
     }
     // if(sumbuY > 266 ){
     //     // aboutRight.classList.add("r-about");
@@ -57,6 +82,20 @@ addEventListener("scroll", function () {
 
     // console.log(sumbuY);
 });
+
+
+window.addEventListener('scroll', function() {
+    let scrollPosition = window.scrollY;
+    let parallaxText = document.getElementById('parallax-text');
+    let parallaxText2 = document.getElementById('parallax-text2');
+    let parallaxText3 = document.getElementById('parallax-text3');
+    
+    parallaxText.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
+    parallaxText2.style.transform = 'translateY(' + scrollPosition * -0.2 + 'px)';
+    parallaxText3.style.transform = 'translateY(' + scrollPosition * -0.2 + 'px)';
+
+});
+
 
 function sendWhatsapp() {
     let phone = "+6285158449281";
@@ -94,16 +133,33 @@ function isValidEmail(email) {
 }
 
 
-const darkToggle = document.querySelector("#dark-toggle");
+
+
+const darkToggle = document.querySelector('#dark-toggle');
 const html = document.querySelector('html');
 
-
-darkToggle.addEventListener('click', function(){
-    
-    // html.classList.remove('dark');
+const navBar = document.querySelector('#nav-menu');
+// Function to toggle dark mode
+const toggleDarkMode = () => {
     if(darkToggle.checked){
         html.classList.add('dark');
-    }else{
+        navBar.classList.add('bg-neutral-950');
+        navBar.classList.remove('bg-white');
+        
+    } else {
+        console.log('tess');
+
         html.classList.remove('dark');
+        navBar.classList.remove('bg-neutral-950');
+        navBar.classList.add('bg-white');
+
+
     }
-});
+};
+
+// Initial check when the page loads
+toggleDarkMode();
+
+// Event listener for change event on the checkbox
+darkToggle.addEventListener('change', toggleDarkMode);
+

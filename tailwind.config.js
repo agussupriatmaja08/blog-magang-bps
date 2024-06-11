@@ -1,23 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: {
-    relative: true,
+    // relative: true,
     transform: (content) => content.replace(/taos:/g, ''),
     files: ['index.html'],
-    darkMode: "class",
   },
-  
+  darkMode: 'class', // Menempatkan darkMode di luar objek content
   
   theme: {
-    container : {
-      center : true,
+    container: {
+      center: true,
       // padding : "10px", 
     },
     extend: {
-      colors:{
-        primary : "#1d4ed8", 
-        secondary : "#64748b",
-        dark : "#0f172a", 
+      colors: {
+        primary: "#1d4ed8",
+        secondary: "#64748b",
+        dark: "#0f172a",
       }
     },
   },
@@ -29,5 +28,4 @@ module.exports = {
     '!delay-[0ms]',
     'html.js :where([class*="taos:"]:not(.taos-init))'
   ],
-}
-
+};
