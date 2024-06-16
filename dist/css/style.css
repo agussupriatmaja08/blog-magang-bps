@@ -1,0 +1,106 @@
+    body {
+        font-family: sans-serif;
+    }
+
+    .imgh {
+        width: 350px;
+        height: 350px;
+    }
+
+    #background-section {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        /* Mengatur tinggi section */
+        background-image: url('../img/bps.jpg');
+        background-size: cover;
+        /* Mengatur ukuran background agar menutupi seluruh section */
+        background-position: center;
+        /* Mengatur posisi background agar berada di tengah */
+        background-repeat: no-repeat;
+        /* Mengatur background agar tidak diulang */
+        background-attachment: fixed;
+        /* Mengatur efek parallax */
+    }
+
+    #background-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Warna overlay gelap */
+        z-index: 1;
+    }
+
+    #background-section h2 {
+        position: relative;
+        z-index: 2;
+    }
+
+    .toggle-icon {
+        transition: opacity 0.3s ease-in-out;
+        /* Transisi opasitas untuk animasi halus */
+    }
+
+    .dark-icon {
+        opacity: 0;
+        /* Ikon Dark Mode awalnya tidak terlihat */
+    }
+
+    #dark-toggle:checked+label .light-icon {
+        opacity: 0;
+        /* Ikon Light Mode tidak terlihat saat Dark Mode aktif */
+    }
+
+    #dark-toggle:checked+label .dark-icon {
+        opacity: 1;
+        /* Ikon Dark Mode terlihat saat Dark Mode aktif */
+    }
+
+
+    /* nav  */
+
+    /* Gaya tambahan jika diperlukan */
+    .nav-link {
+        position: relative;
+        /* Diperlukan untuk menetapkan posisi untuk pseudo-element */
+        transition: transform 0.3s ease-in-out;
+        /* Animasi transformasi */
+        font-weight: 500;
+        /* Memberikan ketebalan teks untuk tampilan yang lebih jelas */
+    }
+
+    /* Pseudo-element untuk garis bawah */
+    .nav-link::after {
+        content: '';
+        /* Tambahkan pseudo-element */
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        /* Posisi garis bawah */
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        /* Warna garis bawah */
+        transition: transform 10s ease-in-out;
+        /* Animasi transformasi */
+        transform: scaleX(0);
+        /* Awalnya skala 0 untuk menyembunyikan garis bawah */
+        transform-origin: left;
+        /* Transformasi dimulai dari kiri */
+    }
+
+    /* Animasi garis bawah saat elemen dihover */
+    .nav-link:hover::after {
+        transform: scaleX(1);
+        /* Skala 1 untuk menampilkan garis bawah saat hover */
+    }
+
+    /* Animasi garis bawah saat elemen aktif (text-primary) */
+    .nav-link.text-primary::after {
+        transform-origin: right;
+        /* Transformasi dimulai dari kanan saat elemen aktif */
+    }

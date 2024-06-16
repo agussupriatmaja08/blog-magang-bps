@@ -4,11 +4,13 @@ module.exports = {
     'index.html',
     'bulan-pertama.html',
     "node_modules/preline/dist/*.js",
+    "dist/css/style.css",
 
     './dist/js/app.js'
   ],
   darkMode: 'class',
   theme: {
+  
     container: {
       center: true,
     },

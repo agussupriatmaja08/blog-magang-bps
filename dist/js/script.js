@@ -83,7 +83,7 @@ AOS.init();
 //     // console.log(sumbuY);
 // });
 
-
+nav.classList.remove('shadow-lg');
 
 
 addEventListener("scroll", function () {
@@ -99,8 +99,8 @@ addEventListener("scroll", function () {
         
         nav.classList.remove('bg-transparent');
         
-        nav.classList.add('bg-white','shadow-lg');
-        nav.classList.remove('text-white');
+        nav.classList.add('bg-white');
+        nav.classList.add('shadow-lg');
         nav.classList.add('text-black'); // Atur warna teks menjadi hitam
         nav.classList.add('dark:bg-neutral-950');
         nav.classList.add('dark:text-white'); 
@@ -112,9 +112,12 @@ addEventListener("scroll", function () {
 
         // Ketika scroll kurang dari atau sama dengan 365, kembalikan ke gaya awal
         nav.classList.remove('dark:bg-neutral-950');
-        nav.classList.add('bg-transparent');
         nav.classList.add('text-white');
-        nav.classList.remove('bg-white','shadow-lg');
+        nav.classList.remove('text-black');
+
+        nav.classList.add('bg-transparent');
+        nav.classList.remove('bg-white');
+        nav.classList.remove('shadow-lg');
         // nav.classList.remove('dark:bg-neutral-950');
         // navBar.classList.remove('text-black');
         navBar.classList.add('text-white'); // Kembali ke warna teks aslinya
