@@ -6,125 +6,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Intership</title>
     <link rel="stylesheet" href="dist/output.css">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
     <script>
         document.documentElement.classList.add('js')
     </script>
 
 
+
+
+
 </head>
 
 <style>
+    body {
+        font-family: sans-serif;
+    }
+
     .imgh {
         width: 350px;
         height: 350px;
     }
 
- #background-section {
-            position: relative;
-            width: 100%;
-            height: 450px; /* Mengatur tinggi section */
-            background-image: url('dist/img/bps.jpg');
-            background-size: cover; /* Mengatur ukuran background agar menutupi seluruh section */
-            background-position: center; /* Mengatur posisi background agar berada di tengah */
-            background-repeat: no-repeat; /* Mengatur background agar tidak diulang */
-            background-attachment: fixed; /* Mengatur efek parallax */
-        }
-        #background-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Warna overlay gelap */
-            z-index: 1;
-        }
-        #background-section h2 {
-            position: relative;
-            z-index: 2;
-        }
+    #background-section {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        /* Mengatur tinggi section */
+        background-image: url('dist/img/bps.jpg');
+        background-size: cover;
+        /* Mengatur ukuran background agar menutupi seluruh section */
+        background-position: center;
+        /* Mengatur posisi background agar berada di tengah */
+        background-repeat: no-repeat;
+        /* Mengatur background agar tidak diulang */
+        background-attachment: fixed;
+        /* Mengatur efek parallax */
+    }
+
+    #background-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Warna overlay gelap */
+        z-index: 1;
+    }
+
+    #background-section h2 {
+        position: relative;
+        z-index: 2;
+    }
+
+    .toggle-icon {
+        transition: opacity 0.3s ease-in-out;
+        /* Transisi opasitas untuk animasi halus */
+    }
+
+    .dark-icon {
+        opacity: 0;
+        /* Ikon Dark Mode awalnya tidak terlihat */
+    }
+
+    #dark-toggle:checked+label .light-icon {
+        opacity: 0;
+        /* Ikon Light Mode tidak terlihat saat Dark Mode aktif */
+    }
+
+    #dark-toggle:checked+label .dark-icon {
+        opacity: 1;
+        /* Ikon Dark Mode terlihat saat Dark Mode aktif */
+    }
 
 
+    /* nav  */
+
+    /* Gaya tambahan jika diperlukan */
+    .nav-link {
+        position: relative;
+        /* Diperlukan untuk menetapkan posisi untuk pseudo-element */
+        transition: transform 0.3s ease-in-out;
+        /* Animasi transformasi */
+        font-weight: 500;
+        /* Memberikan ketebalan teks untuk tampilan yang lebih jelas */
+    }
+
+    /* Pseudo-element untuk garis bawah */
+    .nav-link::after {
+        content: '';
+        /* Tambahkan pseudo-element */
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        /* Posisi garis bawah */
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        /* Warna garis bawah */
+        transition: transform 10s ease-in-out;
+        /* Animasi transformasi */
+        transform: scaleX(0);
+        /* Awalnya skala 0 untuk menyembunyikan garis bawah */
+        transform-origin: left;
+        /* Transformasi dimulai dari kiri */
+    }
+
+    /* Animasi garis bawah saat elemen dihover */
+    .nav-link:hover::after {
+        transform: scaleX(1);
+        /* Skala 1 untuk menampilkan garis bawah saat hover */
+    }
+
+    /* Animasi garis bawah saat elemen aktif (text-primary) */
+    .nav-link.text-primary::after {
+        transform-origin: right;
+        /* Transformasi dimulai dari kanan saat elemen aktif */
+    }
 </style>
+
 
 <body class="dark:bg-neutral-950 w-[100%]">
     <!-- Section header start -->
-    <header class="bg-transparent absolute 
-      top-0 left-0 w-full flex items-center z-10 ">
-        <div class="container" >
 
-            <div class="flex items-center justify-between relative">
-                <div class="px-4">
-                    <a href="#home" class="text-primary font-bold text-xl block py-4">deagus</a>
-                </div>
-
-                <div class="px-4 flex  items-center ">
-                    <button id="humburger" name="humburger" type="button"
-                        class=" block absolute right-4 w-[30px] justify-center lg:hidden">
-                        <span class="dark:bg-neutral-100 humburger-line origin-top-left transition duration-300"></span>
-                        <span class="dark:bg-neutral-100 humburger-line"></span>
-                        <span class="dark:bg-neutral-100 humburger-line origin-bottom-left  transition duration-300"> </span>
+    <!-- ========== HEADER ========== -->
+    <!-- ========== HEADER ========== -->
+    <header id="header"
+        class="flex fixed flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm lg:py-5 md:py-4 sm:py-4  text-white">
+        <nav class="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
+            aria-label="Global">
+            <div class="flex items-center justify-between">
+                <a class="flex-none text-xl font-semibold dark:text-white" id="myblog"  aria-label="Brand">My Blog</a>
+                <div class="sm:hidden">
+                    <button type="button"
+                        class="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-semibold rounded-lg border border-gray-200  hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-700"
+                        data-hs-collapse="#navbar-collapse-with-animation"
+                        aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
+                        <svg class="hs-collapse-open:hidden size-4" width="16" height="16" fill="currentColor"
+                            viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                        <svg class="hs-collapse-open:block flex-shrink-0 hidden size-4" width="16" height="16"
+                            fill="currentColor" viewBox="0 0 16 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
                     </button>
-
-                    <nav id="nav-menu"
-                    class="hidden lg:hidden-none mt-9 lg:mt-0 absolute  py-5 shadow-lg rounded-lg max-w-[250px] w-full right-4 top-3 p-5 text-base font-semibold lg:text-white sm:text-neutral-800 md:text-neutral-800  lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none lg:top-0">
-                       
-                        <ul class="lg:flex ">
-                          
-                            <li>
-                                <a href="#home" class="hover:text-primary  dark:text-neutral-100 mt-[10px] flex lg:mr-5">About Me</a>
-                            </li>
-                            <li>
-                                <a href="#profileBps" class="hover:text-primary dark:text-neutral-100 mt-[10px] flex lg:mr-5">Profile
-                                    Instansi</a>
-                            </li>
-                            <li>
-                                <a href="#activity" class="hover:text-primary  dark:text-neutral-100 mt-[10px] flex lg:mr-5">Activity</a>
-                            </li>
-                            <!-- <li>
-                                <a href="#project" class="hover:text-primary mt-[10px] flex lg:mr-5">Project</a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="#protofolio" class="hover:text-primary mt-[10px] flex lg:mr-5">Protofolio</a>
-                            </li> -->
-
-                            <li>
-                                <a href="#contact" class="hover:text-primary dark:text-neutral-100 mt-[10px] flex lg:mr-5">Contact</a>
-                            </li>
-
-                            <li class="flex items-center lg:mr-5 pt-2">
-                                <div class="flex">
-                                    <span class="mr-2  dark:text-slate-200 text-base">Light</span>
-                                    <input type="checkbox" class="hidden" id="dark-toggle">
-                                    <label for="dark-toggle">
-                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
-                                        </div>
-                                    </label>
-                                    <span class="ml-2  dark:text-slate-200 text-base">Dark</span>
-                                </div>
-                            </li>
-                            
-                            <!-- <li class="flex items-center pt-2 pl-4">
-                                <div class="flex">
-                                    <span class="mr-2 text-sm text-slate-500">Light</span>
-                                    <input type="checkbox" class="hidden" id="dark-toggle" />
-                                    <label for="dark-toggle">
-                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-[0.5px]">
-                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white  transition duration-500"></div>
-                                        </div>
-                                    </label>
-                                    <span class="ml-2 text-sm text-slate-500">Dark</span>
-                                </div>
-                            </li> -->
-                        </ul>
-                    </nav>
                 </div>
             </div>
-        </div>
+            <div id="navbar-collapse-with-animation"
+                class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-end sm:ps-7">
 
+
+                    <a href="#home" class="hover:text-primary navActive   mt-[10px] flex lg:mr-5">About
+                        Me</a>
+
+                    <a href="#profileBps" class="hover:text-primary navActive   mt-[10px] flex lg:mr-5">Profile
+                        Instansi</a>
+
+                    <a href="#activity" class="hover:text-primary navActive   mt-[10px] flex lg:mr-5">Activity</a>
+
+                    <a href="#contact" class="hover:text-primary navActive   mt-[10px] flex lg:mr-5">Contact</a>
+
+                    <div class="flex items-center lg:mr-5 pt-2 sm:dark:text-neutral-800">
+                        <div class="flex items-center sm:dark:text-neutral-100 md:dark:text-neutral-100">
+                            <!-- Toggle Switch Input -->
+                            <input data-hs-theme-switch="" class="hidden" type="checkbox" id="dark-toggle">
+
+                            <!-- Label for Toggle Switch -->
+                            <label for="dark-toggle" class="flex items-center cursor-pointer">
+                                <!-- SVG Icon for Light Mode -->
+                                <svg class=" icon light-icon transition lg:dark:text-white duration-300 ease-in-out sm:dark:text-neutral-100 md:dark:text-neutral-100"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+
+                                <!-- SVG Icon for Dark Mode (Initially hidden) -->
+                                <svg class="dark-icon dark:block hidden lg:dark:text-white duration-300 ease-in-out sm:dark:text-neutral-100 md:dark:text-neutral-100"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                                </svg>
+                            </label>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            </div>
+            </div>
+        </nav>
     </header>
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== END HEADER ========== -->
+
+
+
+
+
+
     <!-- Section header end -->
     <!-- <section id="background-section" class="w-full h-96 flex items-center justify-center text-white bg-cover bg-center relative overflow-hidden">
         <h2 id="parallax-text" class="text-3xl lg:text-5xl  font-bold text-center">
@@ -139,41 +241,50 @@
     </section> -->
 
 
-    <section id="background-section" class="w-full h-96 flex items-center justify-center text-white bg-cover bg-center relative overflow-hidden bg-red-700">
+    <section id="background-section"
+        class="w-full h-100 flex items-center justify-center text-white bg-cover bg-center relative overflow-hidden">
         <h2 id="parallax-text" class="text-3xl lg:text-4xl  font-bold text-center">
-            <div class="flex items-center justify-center">
-                KEGIATAN MAGANG
+            <div class="mb-4 text-3xl md:text-3xl lg:text-5xl font-extrabold tracking-tight leading-none text-white">
+                BLOG MAGANG
             </div>
-            <div class="mt-2 lg:mt-3 flex items-center lg:text-6xl  justify-center" id="parallax-text2">
-               <span class="text-blue-700 px-2">BADAN</span> <span class="text-green-600 px-2"> PUSAT</span> <span class="text-orange-400 px-2"> STATISTIK </span>  
-               <br>
+            <div class=" md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-white mt-3 mb-2 lg:mt-3 flex items-center font-sans  justify-center"
+                id="parallax-text2">
+                <span class="text-blue-700 px-2">BADAN</span> <span class="text-green-600 px-2"> PUSAT</span> <span
+                    class="text-orange-400 px-2"> STATISTIK </span>
+                <br>
 
             </div>
-            <div class="px-2 ml-3 py-1 text-6xl" id="parallax-text3">BULELENG</div>
-
+            <div class="mb-4 text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-none text-white"
+                id="parallax-text3">BULELENG</div>
+            <!-- <p class="mb-6 text-lg md:text-2xl lg:text-base font-normal text-gray-300 sm:px-6 lg:px-24">Oleh Gede Agus Supriatmaja</p> -->
 
         </h2>
     </section>
 
-    
-    
-    
+
+
+
 
     <!-- Hero Section awal -->
 
-    <section id="home" class="pt-20 mb-10 ">
+    <section id="home" class="section pt-20 mb-10 ">
         <div class="container  px-2  lg:px-10" data-aos="zoom" data-aos-once="true" data-aos-duration="1000">
             <div class="flex flex-wrap ">
 
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h1 class="text-base font-semibold text-primary md:text-xl lg:text-3xl mb-8">Hallo semua,
-                        saya<span class="block font-bold dark:text-neutral-100 text-dark text-3xl md:text-4xl lg:text-5xl"> Gede Agus
-                            Supriatmaja</span> <span class="text-secondary text-base dark:text-neutral-200">bisa dipanggil De Agus</span>
+                        saya<span
+                            class="block font-bold dark:text-neutral-100 text-dark text-3xl md:text-4xl lg:text-5xl">
+                            Gede Agus
+                            Supriatmaja</span> <span class="text-secondary text-base dark:text-neutral-200">bisa
+                            dipanggil De Agus</span>
                     </h1>
 
-                    <h2 class="font-medium text-secondary text-lg mb-5 dark:text-neutral-200">Mahasiswa Universitas Pendidikan Ganesha | <span
-                            class="text-dark dark:text-neutral-200">S1 Sistem Informasi</span> </h2>
-                    <p class="font-medium text-secondary mb-10 text-justify dark:text-neutral-200">Pada semester 6, saya mengikuti kegiatan
+                    <h2 class="font-medium text-secondary text-lg mb-5 dark:text-neutral-200">Mahasiswa Universitas
+                        Pendidikan Ganesha | <span class="text-dark dark:text-neutral-200">S1 Sistem Informasi</span>
+                    </h2>
+                    <p class="font-medium text-secondary mb-10 text-justify dark:text-neutral-200">Pada semester 6, saya
+                        mengikuti kegiatan
                         magang di BPS Buleleng. Magang tersebut memberi saya kesempatan untuk mendapatkan pengalaman
                         praktis di bidang statistik dan pengolahan data. Saya terlibat dalam berbagai kegiatan proses
                         bisnis BPS, seperti entri data Susenas 2024. Selain itu, saya juga
@@ -212,15 +323,17 @@
     <!-- Hero Section akhir  -->
 
     <!-- About secstion start -->
-    <section id="profileBps" class="mt-1 mb-10 pt-24 pb-32">
+    <section id="profileBps" class="section mt-1 mb-10 pt-24 pb-32">
         <div class="h-max container px-2 lg:px-10" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
             <h4 class="font-bold text-primary   ml-4 mb-5  text-xl text-center ">Profile Instansi</h4>
-            <h4 class="font-bold text-dark  text-center ml-4 mb-16  lg:text-4xl text-3xl dark:text-neutral-200 ">Profil BPS Buleleng</h4>
+            <h4 class="font-bold text-dark  text-center ml-4 mb-16  lg:text-4xl text-3xl dark:text-neutral-200 ">Profil
+                BPS Buleleng</h4>
 
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2 delay-[300ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
                     data-taos-offset="100">
-                    <h2 class="font-bold text-dark mb-3 text-xl max-w-xl lg:text-2xl dark:text-neutral-200">Profil Singkat</h2>
+                    <h2 class="font-bold text-dark mb-3 text-xl max-w-xl lg:text-2xl dark:text-neutral-200">Profil
+                        Singkat</h2>
                     <p class="font-medium font-base text-secondary text-justify dark:text-neutral-200">
                         BPS Buleleng adalah kantor statistik yang berlokasi di Kabupaten Buleleng, Bali. Sebagai bagian
                         dari Badan Pusat Statistik (BPS) Indonesia, BPS Buleleng bertanggung jawab untuk mengumpulkan,
@@ -270,139 +383,208 @@
 
 
     <!-- Project section start  -->
-    <section id="activity" class="mt-5">
-        <div class=" bg-slate-50 w-full pt-16 p-5 lg:p-10  dark:bg-neutral-900">
-            <h4 class="font-bold text-primary  ml-4 mb-5  text-xl text-center ">Activity</h4>
-            <h4 class="font-bold text-dark text-center ml-4 mb-16 md:text-center sm:text-center  lg:text-4xl text-3xl dark:text-neutral-100">Kegiatan di BPS Buleleng</h4>
+    <section id="activity" class="dark:bg-neutral-900 section mt-5 px-60 w-full bg-slate-50 hover:shadow-dark">
+        <div class="bg-slate-50 pt-16 dark:bg-neutral-900 overflow-x-hidden">
+            <h4 class="font-bold text-primary ml-4 mb-5 text-xl text-center">Activity</h4>
+            <h4
+                class="font-bold text-dark text-center ml-4 mb-16 md:text-center sm:text-center lg:text-4xl text-3xl dark:text-neutral-100">
+                Kegiatan di BPS Buleleng
+            </h4>
 
             <!-- Ganjil -->
-            <div class="w-full h-max dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative cursor-pointer transition-transform duration-300 transform hover:scale-105" data-aos="fade-right">
-                <div class="lg:w-[40%] md:w-[100%] content-center relative sm:w-[100%]">
-                    <img src="dist/img/observasi.jpg" alt="Observasi" class="w-full lg:rounded-s-xl h-full object-cover">
+            <div class="w-full h-max dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative transition-transform duration-300 transform hover:scale-105"
+                data-aos="fade-right">
+                <div class="lg:w-2/5 md:w-full content-center relative sm:w-full">
+                    <img src="dist/img/observasi.jpg" alt="Observasi" class="w-full lg:rounded-xl h-full object-cover">
                 </div>
-                <div class="lg:w-[60%] md:w-full sm:w-full text-secondary p-8 relative">
-                    <h3 class="text-secondary text-center text-2xl font-semibold mb-2 dark:text-neutral-100" data-aos="fade-right">Observasi</h3>
+                <div class="lg:w-3/5 md:w-full sm:w-full text-secondary p-8 relative">
+                    <h3 class="text-secondary text-center text-2xl font-semibold mb-2 dark:text-neutral-100"
+                        data-aos="fade-right">
+                        Bulan Pertama
+                    </h3>
+                    <p class="text-center text-sm mb-7">Kegiatan 19 Feb 2024 - 29 Feb 2024 </p>
                     <p class="text-justify lg:text-md dark:text-neutral-100">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, dolorum quae atque beatae fugit quo dolorem id iste sequi quas inventore temporibus adipisci optio possimus distinctio illum tempore enim deleniti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores laborum beatae commodi, nostrum assumenda inventore est sed obcaecati distinctio nemo deserunt exercitationem eaque ipsam architecto ad molestiae aut porro? Veniam delectus impedit ea maxime, distinctio numquam blanditiis modi enim odit at debitis dolore, adipisci quaerat corporis dicta itaque eaque ullam, fugit vel quisquam excepturi illo omnis. Iusto quos eveniet vitae. Consequuntur quisquam animi fugiat laudantium dolores velit nulla odit tenetur provident, eligendi deleniti quod enim at doloribus esse rem. Eaque necessitatibus praesentium, iure neque voluptatibus dolore. Ratione omnis exercitationem odio id, aliquam sunt quam magni saepe velit accusamus dolorem iste delectus perferendis nemo dignissimos voluptate nostrum non alias distinctio fugiat est! Hic quisquam illo natus architecto dignissimos qui, error tempora maxime omnis eligendi deserunt perspiciatis laboriosam! Numquam doloremque perspiciatis itaque enim temporibus veniam, nobis repellendus.
+                        Bulan Februari merupakan bulan pertama saya mengikuti magang di BPS Buleleng, dimulai pada
+                        tanggal
+                        19 Februari 2024. Pada awal kegiatan, saya bersama kelompok magang melakukan analisis proses
+                        bisnis BPS,
+                        termasuk perkenalan dengan lingkungan kerja, pegawai, serta pengenalan ruang lingkup pelajaran
+                        yang
+                        dilakukan di Badan Pusat Statistik. Tujuan dari kegiatan ini adalah untuk lebih memahami
+                        bagaimana
+                        proses bisnis BPS tempat kami magang. Pada bulan ini, kami fokus melakukan rancangan proyek
+                        sistem
+                        informasi berbasis web yang bernama Monalisa (Monitoring dan Kualitas Statistik). Pertama-tama,
+                        kami
+                        melakukan diskusi bersama mentor terkait proyek ini. Diskusi mencakup berbagai aspek penting
+                        seperti
+                        mengidentifikasi masalah yang ada, memahami kebutuhan pengguna, dan menentukan tujuan dari
+                        proyek
+                        Monalisa. Kami juga mendiskusikan bagaimana cara terbaik untuk mengatasi masalah yang telah
+                        diidentifikasi, memilih tema desain yang tepat untuk website...
+                        <br> <br>
+                        <span class="text-primary mt-10 cursor-pointer"><a href="bulan-pertama.html"> Read more
+                                ></a></span>
                     </p>
                 </div>
             </div>
             <!-- End Ganjil -->
 
             <!-- Genap -->
-            <div class="w-full h-max  dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative" data-aos="fade-left">
+            <div class="w-full h-max dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative"
+                data-aos="fade-left">
                 <!-- Text container -->
-                <div class="lg:w-[60%] md:w-[100%] sm:w-[100%] text-secondary p-8 relative order-2 md:order-1">
-            
+                <div class="lg:w-3/5 md:w-full sm:w-full text-secondary p-8 relative order-2 md:order-1">
                     <!-- Image container for sm and md screens -->
-                    <div class="lg:w-[40%] md:w-full sm:w-[100%] content-center relative order-1 lg:hidden">
-                        <img src="dist/img/tes.jpg" alt="" srcset="" class="w-[100%] h-[100%] rounded-e-xl">
+                    <div class="lg:hidden">
+                        <img src="dist/img/tes.jpg" alt="" srcset="" class="w-full h-full rounded-e-xl">
                     </div>
-                    <h3 class="text-secondary text-center text-2xl font-semibold mb-2 mt-3 dark:text-neutral-100" data-aos="fade-left">Tahap UI/UX</h3>
+                    <div class="lg:flex lg:flex-col lg:justify-between lg:h-full">
+                        <div class="lg:w-full md:w-full sm:w-full text-secondary p-8 relative">
+                            <h3 class="text-secondary text-center text-2xl font-semibold mb-2 mt-3 dark:text-neutral-100"
+                                data-aos="fade-left">
+                                Kunjungan Pembimbing pertama
+                            </h3>
+                            <!-- Text content -->
+                            <p class="text-justify lg:text-md dark:text-neutral-100">
+                                Bulan Februari merupakan bulan pertama saya mengikuti magang di BPS Buleleng, dimulai
+                                pada
+                                tanggal
+                                19 Februari 2024. Pada awal kegiatan, saya bersama kelompok magang melakukan analisis
+                                proses
+                                bisnis BPS,
+                                termasuk perkenalan dengan lingkungan kerja, pegawai, serta pengenalan ruang lingkup
+                                pelajaran
+                                yang
+                                dilakukan di Badan Pusat Statistik. Tujuan dari kegiatan ini adalah untuk lebih memahami
+                                bagaimana
+                                proses bisnis BPS tempat kami magang. Pada bulan ini, kami fokus melakukan rancangan
+                                proyek
+                                sistem
+                                informasi berbasis web yang bernama Monalisa (Monitoring dan Kualitas Statistik).
+                                Pertama-tama,
+                                kami
+                                melakukan diskusi bersama mentor terkait proyek ini. Diskusi mencakup berbagai aspek
+                                penting
+                                seperti
+                                mengidentifikasi masalah yang ada, memahami kebutuhan pengguna, dan menentukan tujuan
+                                dari
+                                proyek
+                                Monalisa. Kami juga mendiskusikan bagaimana cara terbaik untuk mengatasi masalah yang
+                                telah
 
-            
-                    <!-- Text content -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image container for lg screens -->
+                <div class="lg:w-2/5 md:w-full sm:w-full relative order-1 md:order-2">
+                    <img src="dist/img/bimbingan_1.jpg" alt="" srcset="" class="w-full h-full rounded-e-xl">
+                </div>
+            </div>
+
+
+            <!-- End Genap -->
+
+            <!-- Ganjil -->
+            <div class="w-full h-max dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative cursor-pointer transition-transform duration-300 transform hover:scale-105"
+                data-aos="fade-right">
+                <div class="lg:w-2/5 md:w-full  content-center relative sm:w-full">
+                    <img src="dist/img/entry_data.jpg" alt="Observasi" class="w-full lg:rounded-xl h-full object-cover">
+                </div>
+                <div class="lg:w-3/5 md:w-full sm:w-full text-secondary p-8 relative">
+                    <h3 class="text-secondary text-center text-2xl font-semibold mb-2 dark:text-neutral-100"
+                        data-aos="fade-right">
+                        Bulan Ketiga
+                    </h3>
+                    <p class="text-center text-sm mb-7">Kegiatan 01 Apr 2024 - 30 Apr 2024 </p>
+
                     <p class="text-justify lg:text-md dark:text-neutral-100">
-                        Deserunt, dolorum quae atque beatae fugit quo dolorem id iste sequi
-                        quas inventore temporibus
-                        adipisci optio possimus distinctio illum tempore enim deleniti. Lorem ipsum dolor sit amet
-                        consectetur, adipisicing elit. Asperiores laborum beatae commodi, nostrum assumenda inventore
-                        est
-                        sed obcaecati distinctio nemo deserunt exercitationem eaque ipsam architecto ad molestiae aut
-                        porro?
-                        Veniam delectus impedit ea maxime, distinctio numquam blanditiis modi enim odit at debitis
-                        dolore,
-                        adipisci quaerat corporis dicta itaque eaque ullam, fugit vel quisquam excepturi illo omnis.
-                        Iusto
-                        quos eveniet vitae. Consequuntur quisquam animi fugiat laudantium dolores velit nulla odit
-                        tenetur
-                        provident, eligendi deleniti quod enim at doloribus esse rem. Eaque necessitatibus praesentium,
-                        iure
-                        neque voluptatibus dolore. Ratione omnis exercitationem odio id, aliquam sunt quam magni saepe
-                        velit
-                        accusamus dolorem iste delectus perferendis nemo dignissimos voluptate nostrum non alias
-                        distinctio
-                        fugiat est! Hic quisquam illo natus architecto dignissimos qui, error tempora maxime omnis
-                        eligendi
-                        deserunt perspiciatis laboriosam! Numquam doloremque perspiciatis itaque enim temporibus veniam,
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, dolorum quae atque
+                        beatae
+                        fugit
+                        quo dolorem id iste sequi quas inventore temporibus adipisci optio possimus distinctio illum
+                        tempore enim deleniti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores
+                        laborum
+                        beatae commodi, nostrum assumenda inventore est sed obcaecati distinctio nemo deserunt
+                        exercitationem
+                        eaque ipsam architecto ad molestiae aut porro? Veniam delectus impedit ea maxime, distinctio
+                        numquam
+                        blanditiis modi enim odit at debitis dolore, adipisci quaerat corporis dicta itaque eaque
+                        ullam,
+                        fugit vel quisquam excepturi illo omnis. Iusto quos eveniet vitae. Consequuntur quisquam
+                        animi
+                        fugiat laudantium dolores velit nulla odit tenetur provident, eligendi deleniti quod enim at
+                        doloribus esse rem. Eaque necessitatibus praesentium, iure neque voluptatibus dolore.
+                        Ratione
+                        omnis
+                        exercitationem odio id, aliquam sunt quam magni saepe velit accusamus dolorem iste delectus
+                        perferendis nemo dignissimos voluptate nostrum non alias distinctio fug iat est! Hic
+                        quisquam
+                        illo natus architecto dignissimos qui, error tempora maxime omnis eligendi
+                        deserunt perspiciatis laboriosam! Numquam doloremque perspiciatis itaque enim temporibus
+                        veniam,
                         nobis repellendus.
                     </p>
                 </div>
-            
-                <!-- Image container for lg screens -->
-                <div class="lg:w-[40%] md:w-[40%] sm:w-[100%] content-center relative order-1 md:order-2  md:hidden sm:hidden lg:block">
-                    <img src="dist/img/tes.jpg" alt="" srcset="" class="w-[100%] h-[100%] rounded-e-xl">
-                </div>
             </div>
-            
-            <!-- End Genap -->
-
-               <!-- Ganjil -->
-               <div class="w-full h-max dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative cursor-pointer transition-transform duration-300 transform hover:scale-105" data-aos="fade-right">
-                <div class="lg:w-[40%] md:w-[100%] content-center relative sm:w-[100%]">
-                    <img src="dist/img/entry_data.jpg" alt="Observasi" class="w-full lg:rounded-s-xl h-full object-cover">
-                </div>
-                <div class="lg:w-[60%] md:w-full sm:w-full text-secondary p-8 relative">
-                    <h3 class="text-secondary text-center text-2xl font-semibold mb-2 dark:text-neutral-100" data-aos="fade-right">Enty Data Susenas</h3>
-                    <p class="text-justify lg:text-md dark:text-neutral-100">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, dolorum quae atque beatae fugit quo dolorem id iste sequi quas inventore temporibus adipisci optio possimus distinctio illum tempore enim deleniti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores laborum beatae commodi, nostrum assumenda inventore est sed obcaecati distinctio nemo deserunt exercitationem eaque ipsam architecto ad molestiae aut porro? Veniam delectus impedit ea maxime, distinctio numquam blanditiis modi enim odit at debitis dolore, adipisci quaerat corporis dicta itaque eaque ullam, fugit vel quisquam excepturi illo omnis. Iusto quos eveniet vitae. Consequuntur quisquam animi fugiat laudantium dolores velit nulla odit tenetur provident, eligendi deleniti quod enim at doloribus esse rem. Eaque necessitatibus praesentium, iure neque voluptatibus dolore. Ratione omnis exercitationem odio id, aliquam sunt quam magni saepe velit accusamus dolorem iste delectus perferendis nemo dignissimos voluptate nostrum non alias distinctio fugiat est! Hic quisquam illo natus architecto dignissimos qui, error tempora maxime omnis eligendi deserunt perspiciatis laboriosam! Numquam doloremque perspiciatis itaque enim temporibus veniam, nobis repellendus.
-                    </p>
-                </div>
-            </div>
-        
             <!-- End Ganjil -->
 
-            
             <!-- Genap -->
-            <div class="w-full h-max  dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative" data-aos="fade-left">
+            <div class="w-full h-max dark:bg-neutral-950 bg-white shadow-sm mb-32 rounded-xl lg:flex sm:block md:block md:flex-wrap relative"
+                data-aos="fade-left">
                 <!-- Text container -->
-                <div class="lg:w-[60%] md:w-[100%] sm:w-[100%] text-secondary p-8 relative order-2 md:order-1">
-            
+                <div class="lg:w-2/5 md:w-full sm:w-full text-secondary p-8 relative order-2 md:order-1">
                     <!-- Image container for sm and md screens -->
-                    <div class="lg:w-[40%] md:w-full sm:w-[100%] content-center relative order-1 lg:hidden">
-                        <img src="dist/img/tes.jpg" alt="" srcset="" class="w-[100%] h-[100%] rounded-e-xl">
+                    <div class="lg:w-full md:w-full sm:w-full content-center relative order-1 lg:hidden">
+                        <img src="dist/img/tes.jpg" alt="" srcset="" class="w-full h-full rounded-e-xl">
                     </div>
-                    <h3 class="text-secondary text-center text-2xl font-semibold mb-2 mt-3 dark:text-neutral-100" data-aos="fade-left">Kunjungan Pembimbing pertama</h3>
-
-            
+                    <h3 class="text-secondary text-center text-2xl font-semibold mb-2 mt-3 dark:text-neutral-100"
+                        data-aos="fade-left">
+                        Kunjungan Pembimbing pertama
+                    </h3>
                     <!-- Text content -->
                     <p class="text-justify lg:text-md dark:text-neutral-100">
-                        Deserunt, dolorum quae atque beatae fugit quo dolorem id iste sequi
-                        quas inventore temporibus
+                        Deserunt, dolorum quae atque beatae fugit quo dolorem id iste sequi quas inventore
+                        temporibus
                         adipisci optio possimus distinctio illum tempore enim deleniti. Lorem ipsum dolor sit amet
-                        consectetur, adipisicing elit. Asperiores laborum beatae commodi, nostrum assumenda inventore
+                        consectetur, adipisicing elit. Asperiores laborum beatae commodi, nostrum assumenda
+                        inventore
                         est
-                        sed obcaecati distinctio nemo deserunt exercitationem eaque ipsam architecto ad molestiae aut
-                        porro?
-                        Veniam delectus impedit ea maxime, distinctio numquam blanditiis modi enim odit at debitis
-                        dolore,
-                        adipisci quaerat corporis dicta itaque eaque ullam, fugit vel quisquam excepturi illo omnis.
-                        Iusto
-                        quos eveniet vitae. Consequuntur quisquam animi fugiat laudantium dolores velit nulla odit
-                        tenetur
-                        provident, eligendi deleniti quod enim at doloribus esse rem. Eaque necessitatibus praesentium,
-                        iure
-                        neque voluptatibus dolore. Ratione omnis exercitationem odio id, aliquam sunt quam magni saepe
-                        velit
-                        accusamus dolorem iste delectus perferendis nemo dignissimos voluptate nostrum non alias
-                        distinctio
-                        fugiat est! Hic quisquam illo natus architecto dignissimos qui, error tempora maxime omnis
-                        eligendi
-                        deserunt perspiciatis laboriosam! Numquam doloremque perspiciatis itaque enim temporibus veniam,
-                        nobis repellendus.
+                        sed obcaecati distinctio nemo deserunt exercitationem eaque ipsam architecto ad molestiae
+                        aut
+                        porro? Veniam delectus impedit ea maxime, distinctio numquam blanditiis modi enim odit at
+                        debitis
+                        dolore, adipisci quaerat corporis dicta itaque eaque ullam, fugit vel quisquam excepturi
+                        illo
+                        omnis.
+                        Iusto quos eveniet vitae. Consequuntur quisquam animi fugiat laudantium dolores velit nulla
+                        odit
+                        tenetur provident, eligendi deleniti quod enim at doloribus esse rem. Eaque necessitatibus
+                        praesentium, iure neque voluptatibus dolore. Ratione omnis exercitationem odio id, aliquam
+                        sunt
+                        quam magni saepe velit accusamus dolorem iste delectus perferendis nemo dignissimos
+                        voluptate
+                        nostrum non alias distinctio fugiat est! Hic quisquam illo natus architecto dignissimos qui,
+                        error
+                        tempora maxime omnis eligendi deserunt perspiciatis laboriosam! Numquam doloremque
+                        perspiciatis
+                        itaque enim temporibus veniam, nobis repellendus.
                     </p>
                 </div>
-            
+
                 <!-- Image container for lg screens -->
-                <div class="lg:w-[40%] md:w-[40%] sm:w-[100%] content-center relative order-1 md:order-2  md:hidden sm:hidden lg:block">
-                    <img src="dist/img/bimbingan_1.jpg" alt="" srcset="" class="w-[100%] h-[100%] rounded-e-xl">
+                <div
+                    class="lg:w-3/5 md:w-3/5 sm:w-full content-center relative order-1 md:order-2 md:hidden sm:hidden lg:block">
+                    <img src="dist/img/bimbingan_1.jpg" alt="" srcset="" class="w-full h-full rounded-e-xl">
                 </div>
             </div>
-            
             <!-- End Genap -->
-
         </div>
     </section>
+
+
     <!-- Project section end  -->
 
 
@@ -411,15 +593,16 @@
 
 
     <!-- project section contact start  -->
-    <section id="contact">
+    <section id="contact" class="section">
 
         <div class="container pt-20 px-5 lg:w-1/2 lg:mx-auto ">
             <h4 class="text-primary flex justify-center my-4 mb-5 lg:text-xl text-xl font-bold" data-aos="zoom-in"
                 data-aos-once="true">Contact</h4>
-            <h2 class="text-dark dark:text-neutral-100 flex justify-center my-4 mb-10 lg:text-4xl text-3xl font-bold " data-aos="zoom-in"
-                data-aos-once="true">Hubungi Saya</h2>
+            <h2 class="text-dark dark:text-neutral-100 flex justify-center my-4 mb-10 lg:text-4xl text-3xl font-bold "
+                data-aos="zoom-in" data-aos-once="true">Hubungi Saya</h2>
 
-            <p class="text-base mb-6 text-secondary text-center dark:text-neutral-100" data-aos="zoom-in" data-aos-once="true">
+            <p class="text-base mb-6 text-secondary text-center dark:text-neutral-100" data-aos="zoom-in"
+                data-aos-once="true">
                 Silahkan tinggalkan pesan pada form di bawah ini
             </p>
             <form data-aos="zoom-in-down" data-aos-once="true">
@@ -535,9 +718,17 @@
 
 
 </body>
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="dist/js/script.js"></script>
+
 <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
+<script src="node_modules/preline/dist/preline.js"></script>
+
+<script src="dist/js/app.js"></script>
+<script src="dist/js/script.js"></script>
+
+<!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> -->
+
 
 
 </html>

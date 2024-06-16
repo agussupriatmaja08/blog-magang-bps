@@ -1,31 +1,40 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: {
-    // relative: true,
-    transform: (content) => content.replace(/taos:/g, ''),
-    files: ['index.html'],
-  },
-  darkMode: 'class', // Menempatkan darkMode di luar objek content
-  
+  content: [
+    'index.html',
+    'bulan-pertama.html',
+    "node_modules/preline/dist/*.js",
+
+    './dist/js/app.js'
+  ],
+  darkMode: 'class',
   theme: {
     container: {
       center: true,
-      // padding : "10px", 
     },
     extend: {
       colors: {
         primary: "#1d4ed8",
         secondary: "#64748b",
         dark: "#0f172a",
+
+      },
+      transitionDuration: {
+        '2000': '2000ms'
+      },
+      fontFamily: {
+        'sans': ['sans-serif'], // Menambahkan Arial ke dalam font sans-serif
       }
     },
   },
+
   plugins: [
     require('taos/plugin'),
+    require('preline/plugin'),
   ],
   safelist: [
     '!duration-[0ms]',
     '!delay-[0ms]',
-    'html.js :where([class*="taos:"]:not(.taos-init))'
+    'html.js :where([class*="taos:"]:not(.taos-init))',
   ],
 };

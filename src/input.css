@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities; */
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/* @import './node_modules/preline/dist/preline.css';
+@import '../node_modules/taos/dist/taos.css'; */
 
 body{
     font-family:  sans-serif;
