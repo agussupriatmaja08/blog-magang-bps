@@ -3,6 +3,8 @@ module.exports = {
   content: [
     'index.html',
     'bulan-pertama.html',
+    'bulan-kedua.html',
+
     "node_modules/preline/dist/*.js",
     "dist/css/style.css",
 

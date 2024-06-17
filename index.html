@@ -33,7 +33,7 @@
     <!-- ========== HEADER ========== -->
     <!-- ========== HEADER ========== -->
     <header id="header"
-        class="flex fixed flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm lg:py-5 md:py-4 sm:py-4 shadow-lg text-white">
+        class="flex fixed flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full text-sm lg:py-5 md:py-4 sm:py-4 shadow-lg text-white sm:px-3">
         <nav class="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8"
             aria-label="Global">
             <div class="flex items-center justify-between">
@@ -58,28 +58,23 @@
             </div>
             <div id="navbar-collapse-with-animation"
                 class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-end  ">
-
-
-                    <a href="#home" class="hover:text-primary underline  navActive ml-4 mt-[10px] flex lg:mr-5">About
-                        Me</a>
-
-                    <a href="#profileBps" class="hover:text-primary navActive  ml-4 mt-[10px] flex lg:mr-5">Profile
-                        Instansi</a>
-
-                    <a href="#activity" class="hover:text-primary navActive ml-4   mt-[10px] flex lg:mr-5">Activity</a>
-
-                    <a href="#contact" class="hover:text-primary navActive  ml-4 mt-[10px] flex lg:mr-5">Contact</a>
-
-                    <div class="flex items-center  ml-4 mb-[2px] lg:mr-5 pt-2 sm:dark:text-neutral-800">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-end">
+                    <a class="py-3 ps-px sm:px-3 font-medium text-base underline navActive hover:text-primary dark:hover:text-neutral-500"
+                        href="#home" aria-current="page">About me</a>
+                    <a class="py-3 ps-px sm:px-3 font-medium text-base navActive hover:text-primary dark:hover:text-neutral-500"
+                        href="#profileBps">Profile Instansi</a>
+                    <a class="py-3 ps-px sm:px-3 font-medium text-base navActive hover:text-primary dark:hover:text-neutral-500"
+                        href="#activity">Activity</a>
+                    <a class="py-3 ps-px sm:px-3 font-medium text-base navActive hover:text-primary dark:hover:text-neutral-500"
+                        href="#contact">Contact</a>
+                    <div class="flex items-center ml-2 mb-[2px] lg:mr-5  sm:dark:text-neutral-800">
                         <div class="flex items-center sm:dark:text-neutral-100 md:dark:text-neutral-100">
                             <!-- Toggle Switch Input -->
                             <input data-hs-theme-switch="" class="hidden" type="checkbox" id="dark-toggle">
-
                             <!-- Label for Toggle Switch -->
                             <label for="dark-toggle" class="flex items-center cursor-pointer">
                                 <!-- SVG Icon for Light Mode -->
-                                <svg class=" icon light-icon transition lg:dark:text-white duration-300 ease-in-out sm:dark:text-neutral-100 md:dark:text-neutral-100"
+                                <svg class="icon light-icon transition lg:dark:text-white duration-300 ease-in-out sm:dark:text-neutral-100 md:dark:text-neutral-100"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
@@ -93,7 +88,6 @@
                                     <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                                 </svg>
-
                                 <!-- SVG Icon for Dark Mode (Initially hidden) -->
                                 <svg class="dark-icon dark:block hidden lg:dark:text-white duration-300 ease-in-out sm:dark:text-neutral-100 md:dark:text-neutral-100"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -104,17 +98,11 @@
                             </label>
                         </div>
                     </div>
-
-
                 </div>
-
-            </div>
-
-
-            </div>
             </div>
         </nav>
     </header>
+
     <!-- ========== END HEADER ========== -->
 
     <!-- ========== END HEADER ========== -->
@@ -164,69 +152,67 @@
 
     <!-- Hero Section awal -->
 
-    <section id="home" class="section pt-20 mb-10 ">
+    <section id="home" class="section pt-28 mb-10 lg:px-9 ">
         <div class="container px-2" data-aos="zoom" data-aos-once="true" data-aos-duration="1000">
             <div class="flex flex-wrap ">
 
-                <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary md:text-xl lg:text-3xl mb-8">Hallo semua,
-                        saya<span
-                            class="block font-bold dark:text-neutral-100 text-dark text-3xl md:text-4xl lg:text-5xl">
-                            Gede Agus
-                            Supriatmaja</span> <span class="text-secondary text-base dark:text-neutral-200">bisa
-                            dipanggil De Agus</span>
-                    </h1>
 
-                    <h2 class="font-medium text-secondary text-lg mb-5 dark:text-neutral-200">Mahasiswa Universitas
-                        Pendidikan Ganesha | <span class="text-dark dark:text-neutral-200">S1 Sistem Informasi</span>
-                    </h2>
-                    <p class="font-medium text-secondary mb-10 text-justify dark:text-neutral-200">Pada semester 6, saya
-                        mengikuti kegiatan
-                        magang di BPS Buleleng. Magang tersebut memberi saya kesempatan untuk mendapatkan pengalaman
-                        praktis di bidang statistik dan pengolahan data. Saya terlibat dalam berbagai kegiatan proses
-                        bisnis BPS, seperti entri data Susenas 2024. Selain itu, saya juga
-                        aktif terlibat dalam pengembangan proyek website yang bernama Monalisa. Dimana dalam proyek
-                        tersebut saya bertanggung jawab dalam pengembanagan backend bagian fungsi Sosial, Umum, dan
-                        Distribusi.
-                        <br> <br>
-                        Pengalaman ini sangat
-                        berharga bagi perkembangan karier saya, dan saya berterima kasih atas kesempatan tersebut.
-                        Tertarik mengetahui lebih lanjut tentang aktivitas saya selama magang di BPS? Ayo, mari kita
-                        eksplorasi bersama!
-                    </p>
-
-
-
-                </div>
-
-                <div class="w-full self-end px-4 lg:w-1/2">
-                    <div class="relative mt-10">
-                        <!-- <img src="dist/img/agusss.jpg" alt="deagus" class="max-w-full mx-auto imgh">
-                        <div class=" w-full h-10  dark:bg-neutral-950 bg-white md:h-50 sm:h-20 sm:bottom-5 lg:h-20 "></div>
-                        <span class="absolute bottom-0 top-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
-                            <svg width="350" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#1D4ED8"
-                                    d="M53.9,-65.6C65,-54.9,65.9,-33.3,63.1,-16C60.4,1.3,53.9,14.4,46.8,27.2C39.6,40.1,31.7,52.8,18.6,62.7C5.4,72.5,-13.1,79.5,-25,73.2C-36.9,66.9,-42.3,47.2,-52,30.2C-61.6,13.1,-75.5,-1.3,-74.6,-14.3C-73.7,-27.2,-57.9,-38.7,-43,-48.8C-28.1,-58.8,-14,-67.4,3.7,-71.8C21.4,-76.2,42.8,-76.3,53.9,-65.6Z"
-                                    transform="translate(100 100) scale(1.3, 1.4)" />
-                            </svg>
-                        </span> -->
-
+                <div class="w-full self-center px-4 lg:w-[70%] m-auto" id="profile">
+                    <!-- hai gpt buat div dibawah ini jadi tengah-tengah  -->
+                    <div class="lg:flex sm:block justify-center">
+                        <div class="text-center">
+                            <img src="dist/img/latar merah undiksha.jpg" data-aos="zoom" data-aos-once="true"
+                                data-aos-duration="1000" alt="" class="h-32 w-32 rounded-full m-auto mb-10">
+                        </div>
+                        <div class="ml-8 ">
+                            <span
+                                class="block font-bold m-auto dark:text-neutral-100 text-primary text-3xl md:text-2xl lg:text-3xl pb-3">Selamat
+                                datang di blog saya👋</span>
+                            <span
+                                class="block font-bold m-auto dark:text-neutral-100 text-dark text-3xl md:text-4xl lg:text-5xl pb-3">
+                                Gede Agus Supriatmaja</span>
+                            <h2 class="font-medium text-lg mb-5 text-dark dark:text-neutral-200">Mahasiswa
+                                Universitas Pendidikan Ganesha <br> <span class="text-dark dark:text-neutral-200">S1
+                                    Sistem Informasi</span>
+                            </h2>
+                        </div>
                     </div>
+                    <p class="font-medium text-secondary mb-10 text-justify dark:text-neutral-200 lg:px-12">
+
+                        Pada semester 6, saya mengikuti kegiatan magang di BPS Buleleng. Magang tersebut memberi saya
+                        kesempatan untuk mendapatkan pengalaman praktis di bidang statistik dan pengolahan data. Saya
+                        terlibat dalam berbagai kegiatan proses bisnis BPS, seperti entri data Susenas 2024. Selain itu,
+                        saya juga aktif terlibat dalam pengembangan proyek website yang bernama Monalisa. Dimana dalam
+                        proyek tersebut saya bertanggung jawab dalam pengembangan backend bagian fungsi Sosial, Umum,
+                        dan Distribusi.
+                        <br><br>
+                        Pengalaman ini sangat berharga bagi perkembangan karier saya, dan saya berterima kasih atas
+                        kesempatan tersebut. Tertarik mengetahui lebih lanjut tentang aktivitas saya selama magang di
+                        BPS? Silakan scroll ke bawah untuk melihat dokumentasi lengkap kegiatan yang saya lakukan selama
+                        magang di BPS Buleleng di blog ini!
+
+
+
+                    </p>
                 </div>
+
+
             </div>
+
+        </div>
         </div>
 
     </section>
     <!-- Hero Section akhir  -->
 
     <!-- About secstion start -->
-    <section id="profileBps" class="section mt-1 mb-10 pt-24 pb-32">
-        <div class="h-max container px-2 lg:px-10" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
+    <section id="profileBps" class="section  mt-1 mb-10 pt-24 pb-32">
+        <div class="h-max container px-2 lg:px-10">
             <h4 class="font-bold text-primary   ml-4 mb-5  text-xl text-center ">Profile Instansi</h4>
             <h4 class="font-bold text-dark  text-center ml-4 mb-16  lg:text-4xl text-3xl dark:text-neutral-200 ">Profil
                 BPS Buleleng</h4>
 
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap" data-aos="fade-right" data-aos-once="true" data-aos-duration="1000">
                 <div class="w-full px-4 mb-10 lg:w-1/2 delay-[300ms] duration-[1000ms] taos:translate-x-[-200px] taos:opacity-0"
                     data-taos-offset="100">
                     <h2 class="font-bold text-dark mb-3 text-xl max-w-xl lg:text-2xl dark:text-neutral-200">Profil
@@ -246,8 +232,8 @@
                     </p>
 
                 </div>
-                <div class="w-full px-4 md:h-[350px] sm:h-[150px] lg:w-1/2 delay-[300ms] duration-[1000ms] taos:translate-x-[200px] taos:opacity-0"
-                    data-taos-offset="100">
+                <div class="w-full px-4 md:h-[350px] sm:h-[150px] lg:w-1/2 delay-[300ms] duration-[1000ms] "
+                    data-aos="fade-left" data-aos-once="true" data-aos-duration="1000">
                     <h3 class="font-bold text-dark mb-3 text-xl max-w-xl lg:text-2xl dark:text-white">Lokasi</h3>
                     <p class="font-medium font-base text-secondary text-justify">
                         <div
@@ -281,14 +267,14 @@
 
     <!-- Project section start  -->
     <section id="activity"
-        class="dark:bg-neutral-900 section mt-5 w-full bg-slate-50 hover:shadow-dark overflow-hidden">
+        class="dark:bg-neutral-900 section mt-5 w-full pt-12 bg-slate-50 hover:shadow-dark overflow-hidden">
         <div class="bg-slate-50 pt-14 dark:bg-neutral-900 overflow-hidden">
             <!-- Ganti overflow-x-hidden ke overflow-hidden di sini -->
             <h4 class="font-bold text-primary ml-4 mb-5 text-xl text-center">Activity</h4>
             <h4 class="font-bold text-dark text-center ml-4 mb-16 lg:text-4xl text-3xl dark:text-neutral-100">Kegiatan
                 di BPS Buleleng</h4>
 
-            <div class="w-[75%] m-auto h-max">
+            <div class="w-[75%] m-auto sm:w-[85%] h-max">
                 <!-- 1. START ACTIVITY -->
                 <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
                     <div class="ps-2 my-2 first:mt-0">
@@ -315,7 +301,7 @@
                                 <div
                                     class="w-full lg:h-[350px] dark:bg-neutral-950 bg-white cursor-pointer shadow-sm mb-32 rounded-xl lg:flex md:block sm:block relative transition-transform duration-300 transform hover:scale-90">
                                     <div class="lg:w-2/5 md:w-full sm:w-full relative">
-                                        <img src="dist/img/diskusi.jpg" alt="diskusi"
+                                        <img src="dist/img/upacara.jpeg" alt="diskusi"
                                             class="w-full lg:rounded-s-lg h-full object-cover">
                                     </div>
 
@@ -331,7 +317,7 @@
                                             Buleleng, dimulai pada tanggal 19 Februari 2024. Pada awal kegiatan, saya
                                             bersama kelompok magang melakukan analisis proses bisnis BPS, termasuk
                                             perkenalan dengan lingkungan kerja, pegawai, dan tugas-tugas yang akan
-                                            diemban.
+                                            diemban...
                                             <br><br>
                                             <span class="text-primary mt-10 cursor-pointer">Read more ></span>
                                         </p>
@@ -349,8 +335,8 @@
 
 
 
-                   <!-- 2. START ACTIVITY -->
-                   <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+                <!-- 2. START ACTIVITY -->
+                <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
                     <div class="ps-2 my-2 first:mt-0">
                         <h3 class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400">01 Mar 2024 - 31
                             Mar 2024</h3>
@@ -371,11 +357,11 @@
                         <!-- Right Content -->
                         <div class="grow pt-0.5 pb-2 mx-auto">
                             <!-- START DIV -->
-                            <a href="bulan-pertama.html" class="block w-full">
+                            <a href="bulan-kedua.html" class="block w-full">
                                 <div
                                     class="w-full lg:h-[350px] dark:bg-neutral-950 bg-white cursor-pointer shadow-sm mb-32 rounded-xl lg:flex md:block sm:block relative transition-transform duration-300 transform hover:scale-90">
                                     <div class="lg:w-2/5 md:w-full sm:w-full relative">
-                                        <img src="dist/img/bimbingan_1.jpg" alt="diskusi"
+                                        <img src="dist/img/diskuisi-framework.jpg" alt="diskusi"
                                             class="w-full lg:rounded-s-lg h-full object-cover">
                                     </div>
 
@@ -387,11 +373,10 @@
                                         </h3>
                                         <p class="text-center text-sm mb-7">Kegiatan 01 Mar 2024 - 31 Mar 2024</p>
                                         <p class="text-justify lg:text-lg dark:text-neutral-100">
-                                            Bulan Februari merupakan bulan pertama saya mengikuti magang di BPS
-                                            Buleleng, dimulai pada tanggal 19 Februari 2024. Pada awal kegiatan, saya
-                                            bersama kelompok magang melakukan analisis proses bisnis BPS, termasuk
-                                            perkenalan dengan lingkungan kerja, pegawai, dan tugas-tugas yang akan
-                                            diemban.
+                                            Bulan Maret adalah bulan kedua kami mengikuti kegiatan magang di BPS
+                                            Buleleng. Selama bulan ini, kami terlibat dalam berbagai aktivitas magang,
+                                            termasuk melakukan entri dokumen Susenas, berdiskusi tentang alat
+                                            pengembangan yang akan digunakan...
                                             <br><br>
                                             <span class="text-primary mt-10 cursor-pointer">Read more ></span>
                                         </p>
@@ -409,8 +394,8 @@
 
 
 
-                   <!-- 3. START ACTIVITY -->
-                   <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+                <!-- 3. START ACTIVITY -->
+                <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
                     <div class="ps-2 my-2 first:mt-0">
                         <h3 class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400">01 Apr 2024 - 30
                             Apr 2024</h3>
@@ -431,7 +416,7 @@
                         <!-- Right Content -->
                         <div class="grow pt-0.5 pb-2 mx-auto">
                             <!-- START DIV -->
-                            <a href="bulan-pertama.html" class="block w-full">
+                            <a href="bulan-ketiga.html" class="block w-full">
                                 <div
                                     class="w-full lg:h-[350px] dark:bg-neutral-950 bg-white cursor-pointer shadow-sm mb-32 rounded-xl lg:flex md:block sm:block relative transition-transform duration-300 transform hover:scale-90">
                                     <div class="lg:w-2/5 md:w-full sm:w-full relative">
@@ -447,11 +432,10 @@
                                         </h3>
                                         <p class="text-center text-sm mb-7">Kegiatan 01 Apr 2024 - 30 Apr 2024</p>
                                         <p class="text-justify lg:text-lg dark:text-neutral-100">
-                                            Bulan Februari merupakan bulan pertama saya mengikuti magang di BPS
-                                            Buleleng, dimulai pada tanggal 19 Februari 2024. Pada awal kegiatan, saya
-                                            bersama kelompok magang melakukan analisis proses bisnis BPS, termasuk
-                                            perkenalan dengan lingkungan kerja, pegawai, dan tugas-tugas yang akan
-                                            diemban.
+                                            Bulan April merupakan bulan yang menandai kami memasuki tahap lanjut dalam
+                                            kegiatan magang di BPS Buleleng. Selama periode ini, kami secara aktif
+                                            terlibat dalam serangkaian aktivitas yang meliputi pengembangan proyek,
+                                            diskusi intensif dengan mentor dan...
                                             <br><br>
                                             <span class="text-primary mt-10 cursor-pointer">Read more ></span>
                                         </p>
@@ -468,8 +452,8 @@
                 <!-- 3. END ACTIVITY -->
 
 
-                   <!-- 4. START ACTIVITY -->
-                   <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+                <!-- 4. START ACTIVITY -->
+                <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
                     <div class="ps-2 my-2 first:mt-0">
                         <h3 class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400">01 Mei 2024 - 31
                             Mei 2024</h3>
@@ -490,7 +474,7 @@
                         <!-- Right Content -->
                         <div class="grow pt-0.5 pb-2 mx-auto">
                             <!-- START DIV -->
-                            <a href="bulan-pertama.html" class="block w-full">
+                            <a href="bulan-keempat.html" class="block w-full">
                                 <div
                                     class="w-full lg:h-[350px] dark:bg-neutral-950 bg-white cursor-pointer shadow-sm mb-32 rounded-xl lg:flex md:block sm:block relative transition-transform duration-300 transform hover:scale-90">
                                     <div class="lg:w-2/5 md:w-full sm:w-full relative">
@@ -502,15 +486,14 @@
                                     <div class="lg:w-3/5 md:w-full sm:w-full text-secondary p-8 relative">
                                         <h3
                                             class="text-secondary text-center text-2xl font-semibold mb-2 dark:text-neutral-100">
-                                            Bulan Kempat
+                                            Bulan Keempat
                                         </h3>
                                         <p class="text-center text-sm mb-7">Kegiatan 01 Mei 2024 - 31 Mei 2024</p>
                                         <p class="text-justify lg:text-lg dark:text-neutral-100">
-                                            Bulan Februari merupakan bulan pertama saya mengikuti magang di BPS
-                                            Buleleng, dimulai pada tanggal 19 Februari 2024. Pada awal kegiatan, saya
-                                            bersama kelompok magang melakukan analisis proses bisnis BPS, termasuk
-                                            perkenalan dengan lingkungan kerja, pegawai, dan tugas-tugas yang akan
-                                            diemban.
+                                            Bulan Mei merupakan bulan keempat kami menjalani magang di BPS Buleleng.
+                                            Selama periode ini, kami terlibat secara aktif dalam serangkaian aktivitas,
+                                            termasuk melanjutkan pengembangan backend pada fitur administrasi,
+                                            mengadakan diskusi intensif dengan mentor...
                                             <br><br>
                                             <span class="text-primary mt-10 cursor-pointer">Read more ></span>
                                         </p>
@@ -525,9 +508,9 @@
                     <!-- End Item -->
                 </div>
                 <!-- 4. END ACTIVITY -->
-               
-                  <!-- 5. START ACTIVITY -->
-                  <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
+
+                <!-- 5. START ACTIVITY -->
+                <div data-aos="fade-up" data-aos-once="true" data-aos-duration="1000">
                     <div class="ps-2 my-2 first:mt-0">
                         <h3 class="text-xs font-medium uppercase text-gray-500 dark:text-neutral-400">01 Juni 2024 - 30
                             Juni 2024</h3>
@@ -608,7 +591,7 @@
 
             <p class="text-base mb-6 text-secondary text-center dark:text-neutral-100" data-aos="zoom-in"
                 data-aos-once="true">
-                Silahkan tinggalkan pesan pada form di bawah ini
+                Silahkan Hubungi pada form di bawah ini
             </p>
             <form data-aos="zoom-in-down" data-aos-once="true">
                 <div class="w-full px-4 mb-8">

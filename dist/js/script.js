@@ -92,6 +92,12 @@ addEventListener("scroll", function () {
 
     const sumbuY = window.scrollY; // Mendapatkan posisi scroll vertikal saat ini
 
+    console.log(sumbuY);
+
+    // if(sumbuY > 108){
+    //     document.querySelector('#profile').classList.remove('hidden')
+        
+    // }
     if (sumbuY > 365) {
         // Ketika scroll melebihi 365, atur warna latar belakang dan teks
         document.querySelector('#myblog').classList.add('text-black');
@@ -102,6 +108,7 @@ addEventListener("scroll", function () {
         nav.classList.add('bg-white');
         nav.classList.add('shadow-lg');
         nav.classList.add('text-black'); // Atur warna teks menjadi hitam
+        nav.classList.remove('text-white'); // Atur warna teks menjadi hitam
         nav.classList.add('dark:bg-neutral-950');
         nav.classList.add('dark:text-white'); 
 
