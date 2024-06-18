@@ -801,6 +801,10 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   margin-top: 1.5rem;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
 .block {
   display: block;
 }
@@ -912,6 +916,18 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   height: max-content;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
 .w-32 {
   width: 8rem;
 }
@@ -942,6 +958,18 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[95\%\] {
+  width: 95%;
+}
+
+.w-28 {
+  width: 7rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .max-w-3xl {
@@ -1294,6 +1322,11 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   padding-bottom: 0.75rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -1380,6 +1413,22 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pl-6 {
+  padding-left: 1.5rem;
+}
+
+.pl-7 {
+  padding-left: 1.75rem;
+}
+
+.pt-3 {
+  padding-top: 0.75rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
 }
 
 .text-center {
@@ -2135,12 +2184,40 @@ body{
     height: 150px;
   }
 
+  .sm\:h-2 {
+    height: 0.5rem;
+  }
+
+  .sm\:h-24 {
+    height: 6rem;
+  }
+
   .sm\:w-\[85\%\] {
     width: 85%;
   }
 
   .sm\:w-full {
     width: 100%;
+  }
+
+  .sm\:w-\[5\%\] {
+    width: 5%;
+  }
+
+  .sm\:w-\[95\%\] {
+    width: 95%;
+  }
+
+  .sm\:w-24 {
+    width: 6rem;
+  }
+
+  .sm\:w-\[\] {
+    width: ;
+  }
+
+  .sm\:w-\[90\%\] {
+    width: 90%;
   }
 
   .sm\:flex-row {
@@ -2213,6 +2290,11 @@ body{
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .sm\:dark\:text-neutral-100:is(.dark *) {
@@ -2289,12 +2371,20 @@ body{
     margin-top: 0.75rem;
   }
 
+  .lg\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
   .lg\:flex {
     display: flex;
   }
 
   .lg\:h-\[350px\] {
     height: 350px;
+  }
+
+  .lg\:h-32 {
+    height: 8rem;
   }
 
   .lg\:w-1\/2 {
@@ -2315,6 +2405,14 @@ body{
 
   .lg\:w-\[70\%\] {
     width: 70%;
+  }
+
+  .lg\:w-\[75\%\] {
+    width: 75%;
+  }
+
+  .lg\:w-32 {
+    width: 8rem;
   }
 
   .lg\:rounded-s-lg {
