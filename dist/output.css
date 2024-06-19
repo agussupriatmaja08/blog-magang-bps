@@ -801,6 +801,10 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   margin-top: 1.5rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -2331,6 +2335,14 @@ body{
 
   .lg\:w-\[75\%\] {
     width: 75%;
+  }
+
+  .lg\:w-\[\] {
+    width: ;
+  }
+
+  .lg\:w-\[100\] {
+    width: 100;
   }
 
   .lg\:rounded-s-lg {
