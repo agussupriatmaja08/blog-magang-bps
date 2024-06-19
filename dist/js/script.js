@@ -92,7 +92,7 @@ addEventListener("scroll", function () {
 
     const sumbuY = window.scrollY; // Mendapatkan posisi scroll vertikal saat ini
 
-    console.log(sumbuY);
+    // console.log(sumbuY);
 
     // if(sumbuY > 108){
     //     document.querySelector('#profile').classList.remove('hidden')
@@ -216,7 +216,6 @@ const toggleDarkMode = () => {
         navBar.classList.remove('bg-white');
 
     } else {
-        console.log('tess');
 
         html.classList.remove('dark');
         // navBar.classList.remove('bg-neutral-950');
