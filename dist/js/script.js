@@ -140,8 +140,8 @@ window.addEventListener('scroll', function () {
     let parallaxText3 = document.getElementById('parallax-text3');
 
     parallaxText.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
-    parallaxText2.style.transform = 'translateY(' + scrollPosition * -0.2 + 'px)';
-    parallaxText3.style.transform = 'translateY(' + scrollPosition * -0.2 + 'px)';
+    // parallaxText2.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
+    // parallaxText3.style.transform = 'translateY(' + scrollPosition * -0.2 + 'px)';
 
 });
 

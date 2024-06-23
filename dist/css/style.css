@@ -104,3 +104,11 @@
         transform-origin: right;
         /* Transformasi dimulai dari kanan saat elemen aktif */
     }
+
+
+    .kutipan {
+        font-family: "Playwrite GB S", cursive;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }

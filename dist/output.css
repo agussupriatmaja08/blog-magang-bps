@@ -721,12 +721,12 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   margin-bottom: 0.5rem;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
-.mb-32 {
-  margin-bottom: 8rem;
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .mb-4 {
@@ -801,8 +801,16 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   margin-top: 1.5rem;
 }
 
-.mb-20 {
-  margin-bottom: 5rem;
+.mt-7 {
+  margin-top: 1.75rem;
+}
+
+.mt-44 {
+  margin-top: 11rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .block {
@@ -946,6 +954,10 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
 
 .w-full {
   width: 100%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-3xl {
@@ -1395,6 +1407,10 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
   padding-top: 1.25rem;
 }
 
+.pt-7 {
+  padding-top: 1.75rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1409,6 +1425,14 @@ html.js :where([class*="taos:"]:not(.taos-init)) {
 
 .font-sans {
   font-family: sans-serif;
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .text-2xl {
@@ -1865,9 +1889,9 @@ body{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:scale-90:hover {
-  --tw-scale-x: .9;
-  --tw-scale-y: .9;
+.hover\:scale-95:hover {
+  --tw-scale-x: .95;
+  --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2335,14 +2359,6 @@ body{
 
   .lg\:w-\[75\%\] {
     width: 75%;
-  }
-
-  .lg\:w-\[\] {
-    width: ;
-  }
-
-  .lg\:w-\[100\] {
-    width: 100;
   }
 
   .lg\:rounded-s-lg {
